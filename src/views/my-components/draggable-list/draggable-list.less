@@ -1,0 +1,39 @@
+.lkcat-admin-draggable-list{
+    height: 100%;
+}
+.lkcat-admin-draggable-list li{
+    padding: 9px;
+    border: 1px solid #e7ebee;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s;
+}
+.lkcat-admin-draggable-list li:hover{
+    color: #87b4ee;
+    border-color: #87b4ee;
+    transition: all .2s;
+}
+.lkcat-admin-draggable-delete{
+    height: 100%;
+    position: absolute;
+    right: -8px;
+    top: 0px;
+    display: none;
+}
+.lkcat-admin-draggable-list li:hover .lkcat-admin-draggable-delete{
+    display: block;
+}
+.placeholder-style{
+    display: block !important;
+    color: transparent;
+    border-style: dashed !important;
+}
+.delte-item-animation{
+    opacity: 0;
+    transition: all .2s;
+}
+.lkcat-admin-draggable-list{
+    overflow: auto
+}
