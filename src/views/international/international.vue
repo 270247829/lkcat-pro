@@ -88,15 +88,15 @@ export default {
             dataI18n: [
                 {
                     name: 'Aresn',
-                    company: 'TalkingData'
+                    company: 'LANKEGP'
                 },
                 {
                     name: 'Lison',
-                    company: 'TalkingData'
+                    company: 'LANKEGP'
                 },
                 {
                     name: 'Lucy',
-                    company: 'TalkingData'
+                    company: 'LANKEGP'
                 }
             ]
         };

@@ -151,10 +151,10 @@ export default {
             let time = '';
             let state = '';
             switch (index) {
-                case 1: buyer = 'Arasn'; addr = '北京市东直门外大街39号院2号楼航空服务大厦'; time = '2017年10月20日 13：33：24'; state = '已付款'; break;
-                case 2: buyer = 'Lison'; addr = '北京市东直门外大街39号院2号楼航空服务大厦'; time = '2017年10月21日 19：13：24'; state = '已付款'; break;
-                case 3: buyer = 'lili'; addr = 'TalkingData总部'; time = '2017年10月12日 10：39：24'; state = '待收货'; break;
-                case 4: buyer = 'lala'; addr = '国家统计局'; time = '2017年8月20日 11：45：24'; state = '已收货'; break;
+                case 1: buyer = 'LGR'; addr = '北京市故宫'; time = '2017年10月20日 13：33：24'; state = '已付款'; break;
+                case 2: buyer = 'LGR'; addr = '北京市故宫'; time = '2017年10月21日 19：13：24'; state = '已付款'; break;
+                case 3: buyer = 'LGR'; addr = 'LANKEGP总部'; time = '2017年10月12日 10：39：24'; state = '待收货'; break;
+                case 4: buyer = 'LGR'; addr = '国家统计局'; time = '2017年8月20日 11：45：24'; state = '已收货'; break;
             }
             let order = {
                 order_id: this.$route.params.order_id,

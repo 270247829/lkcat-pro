@@ -1,6 +1,6 @@
 {
   "name": "lkcat-pro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "lkcat management",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "echarts": "^3.8.5",
     "html2canvas": "^0.5.0-beta4",
     "js-cookie": "^2.2.0",
-    "lkcat": "^0.0.1",
+    "lkcat": "^0.0.2",
     "rasterizehtml": "^1.2.4",
     "simplemde": "^1.11.2",
     "sortablejs": "^1.7.0",

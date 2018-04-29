@@ -14,7 +14,7 @@
                         <Icon type="navicon" size="32"></Icon>
                     </Button>
                 </div>
-                <div class="header-middle-con" :style="{left: shrink?'120px':'260px'}">
+                <div class="header-middle-con" :style="{left: shrink?'120px':'280px'}">
                     <div class="main-breadcrumb">
                         <breadcrumb-nav :currentPath="currentPath"></breadcrumb-nav>
                     </div>
