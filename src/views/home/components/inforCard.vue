@@ -12,6 +12,7 @@
             </Col>
             <Col span="16" class="height-100">
                 <Row type="flex" align="middle" justify="center" class="height-100">
+                    <div class="infor-intro-text">{{ introText }}</div>
                     <count-up 
                         class="infor-card-count user-created-count" 
                         :id-name="idName" 
@@ -20,7 +21,6 @@
                         :countSize="countSize"
                         :countWeight="countWeight"
                     >
-                        <p class="infor-intro-text" slot="intro">{{ introText }}</p>
                     </count-up>
                 </Row>
             </Col>
