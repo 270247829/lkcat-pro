@@ -67,13 +67,24 @@ export const otherRouter = {
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
     {
-        path: '/access',
-        icon: 'key',
-        name: 'access',
+        path: '/home',
+        icon: 'pie-graph',
+        name: 'home',
         title: '权限管理',
         component: Main,
         children: [
-            { path: 'index', title: '权限管理', name: 'access_index', component: () => import('@/views/access/access.vue') }
+            { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue') },
+        ]
+    },
+    {
+        path: '/form',
+        icon: 'compose',
+        name: 'form',
+        title: '表单',
+        component: Main,
+        children: [
+            { path: 'add', title: '基础表单', name: 'add', icon:'edit',component: () => import('@/views/form/add.vue') },
+            { path: 'workflow', title: '分步表单', name: 'workflow', icon: 'arrow-swap', component: () => import('@/views/form/work-flow/work-flow.vue') }
         ]
     },
     {
@@ -163,9 +174,7 @@ export const appRouter = [
         title: '表单编辑',
         component: Main,
         children: [
-            { path: 'artical-publish', title: '文章发布', name: 'artical-publish', icon: 'compose', component: () => import('@/views/form/article-publish/article-publish.vue') },
-            { path: 'workflow', title: '工作流', name: 'workflow', icon: 'arrow-swap', component: () => import('@/views/form/work-flow/work-flow.vue') }
-
+            { path: 'artical-publish', title: '文章发布', name: 'artical-publish', icon: 'compose', component: () => import('@/views/form/article-publish/article-publish.vue') }
         ]
     },
     // {
