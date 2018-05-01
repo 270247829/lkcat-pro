@@ -7,7 +7,78 @@ import echarts from 'echarts';
 export default {
     name: 'serviceRequests',
     mounted () {
+        let color = ['#35BDEF','#0D67FC','#E2B045','#9E4AFC','#6DA771'];
+        let color1 = ['rgba(53,189,239,0.6)','rgba(13,103,252,0.6)','rgba(226,176,69,0.6)','rgba(158,74,252,0.6)','rgba(109,167,113,0.6)'];
+                           
+                    
+                    
+                   
+                   
+        let y = [            
+            {
+                name:'广阳区',
+                value:[120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name:'安次区',
+                value:[257, 358, 278, 234, 290, 330, 310]
+            },
+            {
+                name:'永清县',
+                value:[379, 268, 354, 269, 310, 478, 358]
+            },
+            {
+                name:'固安县',
+                value:[320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name:'香河县',
+                value:[820, 645, 546, 745, 872, 624, 258]
+            }];
+        let seriesData = [];
+        let i=0;
+        let legendArr = [];
+        for (var index in y) {
+            let obj = y[index];
+            seriesData.push(
+                {
+                    type: 'line',
+                    name: obj.name,
+                    stack: '总量',
+                    itemStyle: {
+                        normal: {
+                            color: color[i]
+                        }
+                    },
+                    areaStyle: {
+                        normal: { 
+                         color: color1[i],
+                        }
+                    },
+                    data: obj.value
+                })
+            legendArr.push({
+                name:obj.name,
+                icon: 'circle'
+            });
+            i++
+        }       
         const option = {
+            grid: {
+                left: '1%',
+                right: '2%',
+                top:'20%',
+                bottom:'1%',
+                containLabel: true
+            },
+            legend: {
+                top:'1%',
+                textStyle:{
+                    color:'#1c2438'  
+                },
+                data: legendArr
+            },
+            animation: true,
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -17,78 +88,48 @@ export default {
                     }
                 }
             },
-            grid: {
-                top: '3%',
-                left: '1.2%',
-                right: '1%',
-                bottom: '3%',
-                containLabel: true
+            xAxis: {
+                axisLine: {
+                    lineStyle: {
+                        color: '#0972EE'
+                    }
+        
+                },
+                boundaryGap: false,
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        type: 'dashed',
+                        color: '#0972EE'
+                    }
+                },
+                axisLabel: {
+                    color: '#1c2438'
+                },
+                data:  ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
             },
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            yAxis: {
+                minInterval : 1,
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#0972EE'
+                    }
+        
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed',
+                        color: '#0972EE'
+                    }
+                },
+                axisLabel: {
+                    color: '#0972EE'
                 }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '运营商/网络服务',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {
-                        color: '#2d8cf0'
-                    }},
-                    data: [120, 132, 101, 134, 90, 230, 210]
-                },
-                {
-                    name: '银行/证券',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {
-                        color: '#10A6FF'
-                    }},
-                    data: [257, 358, 278, 234, 290, 330, 310]
-                },
-                {
-                    name: '游戏/视频',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {
-                        color: '#0C17A6'
-                    }},
-                    data: [379, 268, 354, 269, 310, 478, 358]
-                },
-                {
-                    name: '餐饮/外卖',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {
-                        color: '#4608A6'
-                    }},
-                    data: [320, 332, 301, 334, 390, 330, 320]
-                },
-                {
-                    name: '快递/电商',
-                    type: 'line',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'top'
-                        }
-                    },
-                    areaStyle: {normal: {
-                        color: '#398DBF'
-                    }},
-                    data: [820, 645, 546, 745, 872, 624, 258]
-                }
-            ]
+            },
+            series: seriesData
+            
         };
         const serviceRequestCharts = echarts.init(document.getElementById('service_request_con'));
         serviceRequestCharts.setOption(option);

@@ -5,84 +5,123 @@
 <script>
 import echarts from 'echarts';
 import geoData from '../map-data/get-geography-value.js';
+require('echarts-gl');
 export default {
     name: 'homeMap',
     props: {
         cityData: Array
     },
     mounted () {
-        var convertData = function (data) {
-            let res = [];
-            let len = data.length;
-            for (var i = 0; i < len; i++) {
-                var geoCoord = geoData[data[i].name];
-                if (geoCoord) {
-                    res.push({
-                        name: data[i].name,
-                        value: geoCoord.concat(data[i].value)
-                    });
-                }
-            }
-            return res;
-        };
+
 
         var map = echarts.init(document.getElementById('home_page_map'));
-        const chinaJson = require('../map-data/china.json');
-        echarts.registerMap('china', chinaJson);
-        map.setOption({
-            backgroundColor: '#FFF',
-            geo: {
-                map: 'china',
-                label: {
-                    emphasis: {
-                        show: false
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        areaColor: '#EFEFEF',
-                        borderColor: '#CCC'
+        const chinaJson = require('../map-data/131000.json');
+        echarts.registerMap('lf', chinaJson);
+        let option = {
+                    geo3D: {
+                        top: -50,
+                        bottom: 0,
+                        map: 'lf',
+                        itemStyle: {
+                            areaColor: '#1d5e98',
+                            color:'#1d5e98',
+                            opacity: 1,
+                            borderWidth: 0.4,
+                            borderColor: '#000'
+                        },
+                        viewControl:{
+                            distance:160,
+                            maxAlpha:150,
+                            alpha:55,
+                            beta:45,
+                            rotateSensitivity:0,
+                            panSensitivity:1,
+                            panMouseButton:"left",
+                            rotateMouseButton:'middle'
+                        },
+                        label: {
+                            // distance:-200,
+                            show: true,
+                            textStyle: {
+                                color: 'black',
+                                //地图初始化区域字体颜色
+                                fontSize: 17,
+                                opacity: 1,
+                                backgroundColor: 'rgba(0,0,0,0)',
+                                fontFamily: 'Microsoft YaHei'
+                            },
+                            formatter:function(str){
+                                if(str.name == '三河市'){
+                                    str.name += "\n";
+                                }
+                                return str.name
+                            }
+                        },
+                        emphasis: { //当鼠标放上去  地区区域是否显示名称
+                            label: {
+                                show: true,
+                                textStyle: {
+                                    color: 'black',
+                                    fontSize: 20,
+                                    backgroundColor: 'rgba(0,23,11,0)'
+                                }
+                            }
+                        },
+                        //shading: 'lambert',
+                        light: { //光照阴影
+                            main: {
+                                color: '#FFF',
+                                //光照颜色
+                                intensity: 1.2,
+                                //光照强度
+                                shadowQuality: 'high', //阴影亮度
+                                shadow: true,
+                                //是否显示阴影
+                                alpha: 55,
+                                beta: 10
+                            },
+                            ambient: {
+                                intensity: 0.3
+                            }
+                        },
+                        postEffect:{
+                            // enable:true,
+                            bloom:{
+                                enable:true
+                            }
+                        },
+                        zlevel:1
                     },
-                    emphasis: {
-                        areaColor: '#E5E5E5'
-                    }
-                }
-            },
-            grid: {
-                top: 0,
-                left: '2%',
-                right: '2%',
-                bottom: '0',
-                containLabel: true
-            },
-            series: [{
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(this.cityData),
-                symbolSize: function (val) {
-                    return val[2] / 10;
-                },
-                label: {
-                    normal: {
-                        formatter: '{b}',
-                        position: 'right',
-                        show: false
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#0099CC'
-                    }
-                }
-            }]
-
-        });
-        window.addEventListener('resize', function () {
-            map.resize();
-        });
+                    series: [{
+                        name: 'scatter3D',
+                        type: "scatter3D",
+                        coordinateSystem: 'geo3D',
+                        itemStyle: {
+                            color:'yellow',
+                            borderWidth: 1,
+                            borderColor: 'rgba(255,255,255,1)'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#fff'
+                            }
+                        },
+                        zlevel:10,
+                        symbol:'circle',
+                        symbolSize:12,
+                        data: [
+                            [116.72,39.53,10],
+                            [116.30,39.43,10],
+                            [116.68,39.52,10],
+                            [116.50,39.32,10],
+                            [117.00,39.77,10],
+                            [116.63,38.70,10],
+                            [116.40,39.10,10]
+                        ]
+                    }]
+                };
+                map.setOption(option);
+                window.addEventListener('resize',map.resize());
     }
 };
 </script>

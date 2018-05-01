@@ -43,53 +43,47 @@
                 ></infor-card>
             </Col>
         </Row>
-        <Row :gutter="10">
-            <Col :md="24" :lg="8">
-                <Row class-name="home-page-row1" :gutter="10">
-                    <Col :md="12" :lg="24" :style="{marginBottom: '10px'}">
-
-                    </Col>
-                    <Col :md="12" :lg="24" :style="{marginBottom: '10px'}">
-                        <Card>
-                            <p slot="title" class="card-title">
-                                <Icon type="android-checkbox-outline"></Icon>
-                                待办事项
-                            </p>
-                            <a type="text" slot="extra" @click.prevent="addNewToDoItem">
-                                <Icon type="plus-round"></Icon>
-                            </a>
-                            <Modal
-                                v-model="showAddNewTodo"
-                                title="添加新的待办事项"
-                                @on-ok="addNew"
-                                @on-cancel="cancelAdd">
-                                <Row type="flex" justify="center">
-                                    <Input v-model="newToDoItemValue" icon="compose" placeholder="请输入..." style="width: 300px" />
-                                </Row>
-                                <Row slot="footer">
-                                    <Button type="text" @click="cancelAdd">取消</Button>
-                                    <Button type="primary" @click="addNew">确定</Button>
-                                </Row>
-                            </Modal>
-                            <div class="to-do-list-con">
-                                <div v-for="(item, index) in toDoList" :key="index" class="to-do-item">
-                                    <to-do-list-item :content="item.title"></to-do-list-item>
-                                </div>
-                            </div>
-                        </Card>
-                    </Col>
-                </Row>
+        <Row :gutter="10" class="margin-top-10 ">
+            <Col :md="24" :lg="16" :style="{marginBottom: '10px'}">
+                <Card >
+                    <p slot="title" class="card-title">
+                        <Icon type="android-map"></Icon>
+                        地区散点图
+                    </p>
+                    <div class="map-height">
+                        <homeMap></homeMap>
+                    </div>
+                </Card>
             </Col>
-            <Col :md="24" :lg="16">
-
+            <Col :md="24" :lg="8" :style="{marginBottom: '10px'}">
+                <Card>
+                    <p slot="title" class="card-title">
+                        <Icon type="ios-pulse-strong"></Icon>
+                        数据百分比
+                    </p>
+                    <div class="map-height">
+                        <liquidFill></liquidFill>
+                    </div>
+                </Card>
             </Col>
+        </Row>
+        <Row class="margin-top-10">
+            <Card>
+                <p slot="title" class="card-title">
+                    <Icon type="ios-shuffle-strong"></Icon>
+                    各区县统计
+                </p>
+                <div class="line-chart-con">
+                    <service-requests></service-requests>
+                </div>
+            </Card>
         </Row>
         <Row :gutter="10" class="margin-top-10">
             <Col :md="24" :lg="8" :style="{marginBottom: '10px'}">
                 <Card>
                     <p slot="title" class="card-title">
                         <Icon type="android-map"></Icon>
-                        上周每日来访量统计
+                        每日数量
                     </p>
                     <div class="data-source-row">
                         <visite-volume></visite-volume>
@@ -100,7 +94,7 @@
                 <Card>
                     <p slot="title" class="card-title">
                         <Icon type="ios-pulse-strong"></Icon>
-                        数据来源统计
+                        数据百分比
                     </p>
                     <div class="data-source-row">
                         <data-source-pie></data-source-pie>
@@ -111,7 +105,7 @@
                 <Card>
                     <p slot="title" class="card-title">
                         <Icon type="android-wifi"></Icon>
-                        各类用户服务调用变化统计
+                        数据折线图
                     </p>
                     <div class="data-source-row">
                         <user-flow></user-flow>
@@ -119,23 +113,15 @@
                 </Card>
             </Col>
         </Row>
-        <Row class="margin-top-10">
-            <Card>
-                <p slot="title" class="card-title">
-                    <Icon type="ios-shuffle-strong"></Icon>
-                    上周每日服务调用量(万)
-                </p>
-                <div class="line-chart-con">
-                    <service-requests></service-requests>
-                </div>
-            </Card>
-        </Row>
+
     </div>
 </template>
 
 <script>
 import cityData from './map-data/get-city-value.js';
 import homeMap from './components/map.vue';
+import liquidFill from './components/liquidFill.vue';
+
 import dataSourcePie from './components/dataSourcePie.vue';
 import visiteVolume from './components/visiteVolume.vue';
 import serviceRequests from './components/serviceRequests.vue';
@@ -149,6 +135,7 @@ export default {
     name: 'home',
     components: {
         homeMap,
+        liquidFill,
         dataSourcePie,
         visiteVolume,
         serviceRequests,
@@ -178,10 +165,10 @@ export default {
                 }
             ],
             count: {
-                createUser: 496,
-                visit: 3264,
-                collection: 24389305,
-                transfer: 39503498
+                createUser: 678,
+                visit: 5672,
+                collection: 3588931,
+                transfer: 2395034
             },
             cityData: cityData,
             showAddNewTodo: false,

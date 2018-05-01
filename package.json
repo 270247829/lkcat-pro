@@ -23,7 +23,6 @@
     "clipboard": "^1.7.1",
     "countup": "^1.8.2",
     "cropperjs": "^1.2.2",
-    "echarts": "^3.8.5",
     "html2canvas": "^0.5.0-beta4",
     "js-cookie": "^2.2.0",
     "lkcat": "^0.0.2",
@@ -34,7 +33,10 @@
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "vue-virtual-scroller": "^0.10.6",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "echarts": "^4.0.4",
+    "echarts-gl": "^1.1.0",
+    "lk-echarts-liquidfill": "0.0.1"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
