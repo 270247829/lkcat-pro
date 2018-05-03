@@ -1,11 +1,61 @@
-<template>
-    <div @click="showMessage" class="message-con">
-        <Tooltip :content="value > 0 ? '有' + value + '条未读消息' : '无未读消息'" placement="bottom">
-            <Badge count="3">
-                <Icon type="ios-bell-outline" :size="22"></Icon>
+<template>        
+
+    <div  class="message-con">
+
+    <Poptip placement="bottom-end" >
+            <Badge count="10">
+                <Icon type="ios-bell-outline" :size="22" style="width: 100%;"></Icon>
             </Badge>
-        </Tooltip>
+        <div class="api" slot="content">
+            <Tabs value="name1" >
+                <TabPane label="通知(3)" name="name1">
+                    <div class="messageList">
+                        <div class="left">
+                            <Icon type="checkmark" size="32" />
+                        </div>
+                        <div class="right">
+                            <div class="content">
+                                今天下午3点开会
+                            </div>
+                            <div class="time">
+                                今天
+                            </div>
+                        </div>
+                    </div>
+                    <div class="messageList">
+                        <div class="left">
+                            <Icon type="checkmark" size="32" />
+                        </div>
+                        <div class="right">
+                            <div class="content">
+                                今天下午4点开会
+                            </div>
+                            <div class="time">
+                                今天
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="messageList">
+                        <div class="left">
+                            <Icon type="checkmark" size="32" />
+                        </div>
+                        <div class="right">
+                            <div class="content">
+                                今天下午5点开会
+                            </div>
+                            <div class="time">
+                                今天
+                            </div>
+                        </div>
+                    </div>
+                </TabPane>
+                <TabPane label="消息(2)" name="name2">标签二的内容</TabPane>
+                <TabPane label="待办(5)" name="name3">标签三的内容</TabPane>
+            </Tabs>
+        </div>
+    </Poptip>
     </div>
+
 </template>
 
 <script>
@@ -16,14 +66,6 @@ export default {
         value: {
             type: Number,
             default: 0
-        }
-    },
-    methods: {
-        showMessage () {
-            util.openNewPage(this, 'message_index');
-            this.$router.push({
-                name: 'message_index'
-            });
         }
     }
 };
