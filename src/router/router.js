@@ -119,13 +119,6 @@ export const appRouter = [
                 name: 'image-editor',
                 title: '图片预览编辑',
                 component: () => import('@/views/my-components/image-editor/image-editor.vue')
-            },
-            {
-                path: 'file-upload',
-                icon: 'android-upload',
-                name: 'file-upload',
-                title: '文件上传',
-                component: () => import('@/views/my-components/file-upload/file-upload.vue')
             }
         ]
     },

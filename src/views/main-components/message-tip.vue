@@ -1,8 +1,8 @@
 <template>
     <div @click="showMessage" class="message-con">
         <Tooltip :content="value > 0 ? '有' + value + '条未读消息' : '无未读消息'" placement="bottom">
-            <Badge :count="value" dot>
-                <Icon type="ios-bell" :size="22"></Icon>
+            <Badge count="3">
+                <Icon type="ios-bell-outline" :size="22"></Icon>
             </Badge>
         </Tooltip>
     </div>
