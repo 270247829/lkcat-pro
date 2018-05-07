@@ -3,17 +3,19 @@
 </style>
 
 <template>
-    <div class="error404">
-        <div class="error404-body-con">
-            <Card>
-                <div class="error404-body-con-title">4<span><Icon type="ios-navigate-outline"></Icon></span>4</div>
-                <p class="error404-body-con-message">YOU&nbsp;&nbsp;LOOK&nbsp;&nbsp;LOST</p>
+   <div class="error404">
+        <Row type="flex" justify="center" align="middle" class="row" >
+            <Col span="12">
+                <div class="img" ></div>
+            </Col>
+            <Col span="12" class="content">
+                <h1>404</h1>
+                <div class="desc">抱歉，你访问的页面不存在</div>
                 <div class="error404-btn-con">
-                    <Button @click="goHome" size="large" style="width: 200px;" type="text">返回首页</Button>
-                    <Button @click="backPage" size="large" style="width: 200px;margin-left: 40px;" type="primary">返回上一页</Button>
+                    <Button @click="goHome" size="large" type="primary">返回首页</Button>
                 </div>
-            </Card>
-        </div>
+            </Col>
+        </Row>
     </div>
 </template>
 

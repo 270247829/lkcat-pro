@@ -19,52 +19,41 @@
     }
 }
 .error500{
-    &-body-con{
-        width: 700px;
-        height: 500px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        &-title{
-            text-align: center;
-            font-size: 240px;
-            font-weight: 700;
-            color: #2d8cf0;
-            height: 260px;
-            line-height: 260px;
-            margin-top: 40px;
-            .error500-0-span{
-                display: inline-block;
-                position: relative;
-                width: 170px;
-                height: 170px;
-                border-radius: 50%;
-                border: 20px solid #ed3f14;
-                color: #ed3f14;
-                margin-right: 10px;
-                i{
-                    display: inline-block;
-                    font-size: 120px;
-                    position: absolute;
-                    bottom: -10px;
-                    left: 10px;
-                    transform-origin: center bottom;
-                    animation: error500animation 3s ease 0s infinite alternate;
-                }
-            }
-        }
-        &-message{
-            display: block;
-            text-align: center;
-            font-size: 30px;
-            font-weight: 500;
-            letter-spacing: 4px;
-            color: #dddde2;
+    min-height: 500px;
+    height: 80%;
+    .img{
+        height: 360px;
+        width: 100%;
+        max-width: 430px;
+        float: right;
+        margin-right:80px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        background-image: url(../../images/500.svg);
+    }
+    .content{
+        padding-left:120px;
+        h1{
+            color: #434e59;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 72px;
+            margin-bottom: 24px;
         }
     }
+    .desc{
+        color: rgba(0,0,0,.45);
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+    .row{
+        min-height: 500px;
+        height: 80%;
+    }
     &-btn-con{
-        text-align: center;
+        text-align: left;
         padding: 20px 0;
         margin-bottom: 40px;
     }
