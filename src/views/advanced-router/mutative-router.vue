@@ -66,19 +66,19 @@ export default {
             orderData: [
                 {
                     order_id: '1000001',
-                    user_name: 'Aresn'
+                    user_name: 'dai'
                 },
                 {
                     order_id: '1000002',
-                    user_name: 'Lison'
+                    user_name: 'ge'
                 },
                 {
                     order_id: '1000003',
-                    user_name: 'lili'
+                    user_name: 'liu'
                 },
                 {
                     order_id: '1000004',
-                    user_name: 'lala'
+                    user_name: 'li'
                 }
             ]
         };
