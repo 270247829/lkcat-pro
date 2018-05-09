@@ -6,7 +6,13 @@
         <div class="main-header-con" >
             <div slot="top" class="logo-con" :style="{width: shrink?'60px':'230px'}">
                 <span v-show="shrink" class="logo-mini"  key="max-logo"><b>LK</b>C</span>
-                <span v-show="!shrink" class="logo-lg" key="min-logo"><b>LK</b>Cat Pro</span>
+                
+                <span v-show="!shrink" class="logo-lg" key="min-logo">
+                    <img alt="logo" class="logo" :src="logoPath">
+                    <span class="logoDesc">
+                    <b>LK</b>Cat Pro
+                    </span>
+                </span>
             </div>
             <div class="main-header" :style="{paddingLeft: shrink?'60px':'230px'}">
                 <div class="navicon-con">
@@ -76,7 +82,8 @@
     import themeSwitch from './main-components/theme-switch/theme-switch.vue';
     import Cookies from 'js-cookie';
     import util from '@/libs/util.js';
-    
+    import logo from '../images/logo.svg';
+
     export default {
         components: {
             shrinkableMenu,
@@ -89,6 +96,7 @@
         },
         data () {
             return {
+                logoPath : logo,
                 shrink: false,
                 userName: '',
                 isFullScreen: false,

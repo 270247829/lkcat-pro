@@ -5,11 +5,15 @@
 <template>
     <div class="login" @keydown.enter="handleSubmit">
         <div class="login-con">
-            <Card :bordered="false">
-                <p slot="title">
-                    <Icon type="log-in"></Icon>
-                    欢迎登录
-                </p>
+            <div class="top">
+                <div class="header">
+                        <img alt="logo" class="logo" :src="logoPath">
+                        <span class="title">LKCat Pro</span>
+                </div>
+                <div class="desc">LKCat Pro 是一款可以快速开发后台管理系统的框架
+                </div>
+            </div>
+            <div >
                 <div class="form-con">
                     <Form ref="loginForm" :model="form" :rules="rules">
                         <FormItem prop="userName">
@@ -32,18 +36,20 @@
                     </Form>
                     <p class="login-tip">输入任意用户名和密码即可</p>
                 </div>
-            </Card>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import Cookies from 'js-cookie';
+import logo from '../images/logo.svg';
 export default {
     data () {
         return {
+            logoPath : logo,
             form: {
-                userName: 'LK-Cat User',
+                userName: 'LK-Cat Pro',
                 password: ''
             },
             rules: {
