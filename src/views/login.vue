@@ -3,7 +3,9 @@
 </style>
 
 <template>
+
     <div class="login" @keydown.enter="handleSubmit">
+        <loginBack/>
         <div class="login-con">
             <div class="top">
                 <div class="header">
@@ -41,10 +43,16 @@
     </div>
 </template>
 
+
 <script>
 import Cookies from 'js-cookie';
+import loginBack from './my-components/canvas/loginBack';
 import logo from '../images/logo.svg';
+
 export default {
+    components:{
+        loginBack
+    },
     data () {
         return {
             logoPath : logo,
@@ -80,6 +88,11 @@ export default {
                 }
             });
         }
+    },
+    mounted () {
+
+
+
     }
 };
 </script>

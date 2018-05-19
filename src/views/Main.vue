@@ -108,7 +108,7 @@
                 return this.$store.state.app.menuList;
             },
             pageTagsList () {
-                return this.$store.state.app.pageOpenedList; // 打开的页面的页面对象
+                // return this.$store.state.app.pageOpenedList; // 打开的页面的页面对象
             },
             currentPath () {
                 return this.$store.state.app.currentPath; // 当前面包屑数组
@@ -139,7 +139,6 @@
                 this.userName = Cookies.get('user');
                 let messageCount = 3;
                 this.messageCount = messageCount.toString();
-                this.checkTag(this.$route.name);
                 this.$store.commit('setMessageCount', 3);
             },
             toggleClick () {
@@ -158,16 +157,6 @@
                     this.$router.push({
                         name: 'login'
                     });
-                }
-            },
-            checkTag (name) {
-                let openpageHasTag = this.pageTagsList.some(item => {
-                    if (item.name === name) {
-                        return true;
-                    }
-                });
-                if (!openpageHasTag) { //  解决关闭当前标签后再点击回退按钮会退到当前页时没有标签的问题
-                    util.openNewPage(this, name, this.$route.params || {}, this.$route.query || {});
                 }
             },
             handleSubmenuChange (val) {
@@ -192,7 +181,6 @@
                 if (pathArr.length > 2) {
                     this.$store.commit('addOpenSubmenu', pathArr[1].name);
                 }
-                this.checkTag(to.name);
                 localStorage.currentPageName = to.name;
             },
             lang () {

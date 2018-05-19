@@ -11,7 +11,6 @@ import util from './libs/util';
 
 Vue.use(VueI18n);
 Vue.use(LKCat);
-
 new Vue({
     el: '#app',
     router: router,
@@ -34,6 +33,5 @@ new Vue({
                 tagsList.push(...item.children);
             }
         });
-        this.$store.commit('setTagsList', tagsList);
     }
 });
