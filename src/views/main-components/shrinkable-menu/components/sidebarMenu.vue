@@ -22,7 +22,7 @@
                         <span class="layout-text" :key="'title' + child.name">{{ itemTitle(child) }}</span>
                     </MenuItem>
 
-                    <Submenu v-if="child.children && child.children.length > 1" :name="child.name" :key="child.name">
+                    <Submenu v-if="child.children && child.children.length >= 1" :name="child.name" :key="child.name">
                         <template slot="title">
                             <Icon :type="child.icon" :size="iconSize"></Icon>
                             <span class="layout-text">{{ itemTitle(child) }}</span>

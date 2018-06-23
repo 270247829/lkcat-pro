@@ -87,7 +87,11 @@ export const appRouter = [
         children: [
             { path: 'list', title: '标准列表', name: 'list', icon: 'arrow-move', component: () => import('@/views/tables/list.vue') },
             { path: 'exportableTable', title: '表格导出数据', name: 'exportable-table', icon: 'code-download', component: () => import('@/views/tables/exportable-table.vue') },
-            { path: 'table2image', title: '表格转图片', name: 'table-to-image', icon: 'images', component: () => import('@/views/tables/table-to-image.vue') }
+            { path: 'table2image', title: '表格转图片', name: 'table-to-image', icon: 'images', component: () => import('@/views/tables/table-to-image.vue'),
+              children:[
+                  { path: 'workflow', title: '分步表单', name: 'workflow', icon: 'arrow-swap', component: () => import('@/views/form/work-flow/work-flow.vue') }
+                ]
+             }
         ]
     },
     {
