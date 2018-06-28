@@ -48,7 +48,7 @@
 import Cookies from 'js-cookie';
 import loginBack from './my-components/canvas/loginBack';
 import logo from '../images/logo.svg';
-
+import avator from '../images/avator.jpg';
 export default {
     components:{
         loginBack
@@ -76,7 +76,7 @@ export default {
                 if (valid) {
                     Cookies.set('user', this.form.userName);
                     Cookies.set('password', this.form.password);
-                    this.$store.commit('setAvator', 'http://localhost:8080/src/images/avator.jpg');
+                    this.$store.commit('setAvator', avator);
                     if (this.form.userName === 'lkcat_admin') {
                         Cookies.set('access', 0);
                     } else {

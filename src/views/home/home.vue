@@ -78,6 +78,17 @@
                 </div>
             </Card>
         </Row>
+        <Row class="margin-top-10">
+            <Card>
+                <p slot="title" class="card-title">
+                    <Icon type="ios-shuffle-strong"></Icon>
+                    动态折线图
+                </p>
+                <div class="line-chart-con">
+                    <aliveLine></aliveLine>
+                </div>
+            </Card>
+        </Row>
         <Row :gutter="10" class="margin-top-10">
             <Col :md="24" :lg="8" :style="{marginBottom: '10px'}">
                 <Card>
@@ -130,6 +141,7 @@ import countUp from './components/countUp.vue';
 import inforCard from './components/inforCard.vue';
 import mapDataTable from './components/mapDataTable.vue';
 import toDoListItem from './components/toDoListItem.vue';
+import aliveLine from './components/aliveLine.vue';
 
 export default {
     name: 'home',
@@ -143,7 +155,8 @@ export default {
         countUp,
         inforCard,
         mapDataTable,
-        toDoListItem
+        toDoListItem,
+        aliveLine
     },
     data () {
         return {
