@@ -1,4 +1,5 @@
 import Main from '@/views/Main.vue';
+import parentView from '@/views/main-components/parent-view';
 
 // 不作为Main组件的子页面展示的页面单独写，如下
 export const loginRouter = {
@@ -87,11 +88,7 @@ export const appRouter = [
         children: [
             { path: 'list', title: '标准列表', name: 'list', icon: 'arrow-move', component: () => import('@/views/tables/list.vue') },
             { path: 'exportableTable', title: '表格导出数据', name: 'exportable-table', icon: 'code-download', component: () => import('@/views/tables/exportable-table.vue') },
-            { path: 'table2image', title: '表格转图片', name: 'table-to-image', icon: 'images', component: () => import('@/views/tables/table-to-image.vue'),
-              children:[
-                  { path: 'workflow', title: '分步表单', name: 'workflow', icon: 'arrow-swap', component: () => import('@/views/form/work-flow/work-flow.vue') }
-                ]
-             }
+            { path: 'table2image', title: '表格转图片', name: 'table-to-image', icon: 'images', component: () => import('@/views/tables/table-to-image.vue')}
         ]
     },
     {
@@ -118,6 +115,61 @@ export const appRouter = [
         ]
     },
     {
+        path: '/multilevel',
+        name: 'multilevel',
+        icon: 'arrow-graph-up-right',
+        title: '多级菜单',
+        component: Main,
+        children: [
+            {
+                path: 'level_2_1',
+                name: 'level_2_1',
+                icon: 'arrow-graph-up-right',
+                title: '二级-1',
+                component: () => import('@/views/multilevel/level-1.vue')
+            },
+            {
+                path: 'level_2_2',
+                name: 'level_2_2',
+                icon: 'arrow-graph-up-right',
+                title: '二级-2',
+                component: parentView,
+                children: [
+                    {
+                        path: 'level_2_2_1',
+                        name: 'level_2_2_1',
+                        icon: 'arrow-graph-up-right',
+                        title: '三级',
+                        component: () => import('@/views/multilevel/level-2/level-3/level-3-1.vue')
+                    }
+                ]
+            },
+            {
+                path: 'level_2_3',
+                name: 'level_2_3',
+                icon: 'arrow-graph-up-right',
+                title: '二级-3',
+                component: parentView,
+                children: [
+                    {
+                        path: 'level_2_3_1',
+                        name: 'level_2_3_1',
+                        icon: 'arrow-graph-up-right',
+                        title: '三级-1',
+                        component: () => import('@/views/multilevel/level-2/level-2-1.vue')
+                    },
+                    {
+                        path: 'level_2_3_2',
+                        name: 'level_2_3_2',
+                        icon: 'arrow-graph-up-right',
+                        title: '三级-2',
+                        component: () => import('@/views/multilevel/level-2/level-2-2.vue')
+                    }
+                ]
+            }
+        ]
+    },
+    {
         path: '/error-page',
         icon: 'android-sad',
         title: '异常页',
@@ -127,8 +179,6 @@ export const appRouter = [
             { path: '403', title: '403', name: '403', component: () => import('@/views/error-page/403.vue') },
             { path: '404', title: '404', name: '404', component: () => import('@/views/error-page/404.vue') },
             { path: '500', title: '500', name: '500', component: () => import('@/views/error-page/500.vue') }
-
-
         ]
     }
 ];

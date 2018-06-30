@@ -27,7 +27,7 @@
                             <Icon :type="child.icon" :size="iconSize"></Icon>
                             <span class="layout-text">{{ itemTitle(child) }}</span>
                         </template>
-                   
+
                         <template v-for="child2 in child.children">
                             <MenuItem :name="child2.name" :key="'menuitem' + child2.name">
                                 <Icon :type="child2.icon" :size="iconSize" :key="'icon' + child2.name"></Icon>
@@ -73,6 +73,9 @@ export default {
                 this.$refs.sideMenu.updateOpened();
             }
         });
+    },
+    mounted () {
+
     }
 };
 </script>

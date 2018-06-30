@@ -6,7 +6,7 @@
         <div class="main-header-con" >
             <div slot="top" class="logo-con" :style="{width: shrink?'60px':'230px'}">
                 <span v-show="shrink" class="logo-mini"  key="max-logo"><b>LK</b>C</span>
-                
+
                 <span v-show="!shrink" class="logo-lg" key="min-logo">
                     <img alt="logo" class="logo" :src="logoPath">
                     <span class="logoDesc">
@@ -49,10 +49,10 @@
         </div>
 
         <div class="sidebar-menu-con" :style="{width: shrink?'60px':'230px', overflow: shrink ? 'visible' : 'auto'}">
-            <shrinkable-menu 
+            <shrinkable-menu
                 :shrink="shrink"
                 @on-change="handleSubmenuChange"
-                :theme="menuTheme" 
+                :theme="menuTheme"
                 :before-push="beforePush"
                 :open-names="openedSubmenuArr"
                 :menu-list="menuList">
@@ -136,10 +136,6 @@
                 if (pathArr.length >= 2) {
                     this.$store.commit('addOpenSubmenu', pathArr[1].name);
                 }
-                this.userName = Cookies.get('user');
-                let messageCount = 3;
-                this.messageCount = messageCount.toString();
-                this.$store.commit('setMessageCount', 3);
             },
             toggleClick () {
                 this.shrink = !this.shrink;
@@ -188,6 +184,8 @@
             }
         },
         mounted () {
+            console.log(this.$store.state.app.openedSubmenuArr);
+
             this.init();
         },
         created () {
