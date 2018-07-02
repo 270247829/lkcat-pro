@@ -117,28 +117,28 @@ export const appRouter = [
     {
         path: '/multilevel',
         name: 'multilevel',
-        icon: 'arrow-graph-up-right',
+        icon: 'android-menu',
         title: '多级菜单',
         component: Main,
         children: [
             {
                 path: 'level_2_1',
                 name: 'level_2_1',
-                icon: 'arrow-graph-up-right',
+                icon: 'android-menu',
                 title: '二级-1',
                 component: () => import('@/views/multilevel/level-1.vue')
             },
             {
                 path: 'level_2_2',
                 name: 'level_2_2',
-                icon: 'arrow-graph-up-right',
+                icon: 'android-menu',
                 title: '二级-2',
                 component: parentView,
                 children: [
                     {
                         path: 'level_2_2_1',
                         name: 'level_2_2_1',
-                        icon: 'arrow-graph-up-right',
+                        icon: 'android-menu',
                         title: '三级',
                         component: () => import('@/views/multilevel/level-2/level-3/level-3-1.vue')
                     }
@@ -147,21 +147,21 @@ export const appRouter = [
             {
                 path: 'level_2_3',
                 name: 'level_2_3',
-                icon: 'arrow-graph-up-right',
+                icon: 'android-menu',
                 title: '二级-3',
                 component: parentView,
                 children: [
                     {
                         path: 'level_2_3_1',
                         name: 'level_2_3_1',
-                        icon: 'arrow-graph-up-right',
+                        icon: 'android-menu',
                         title: '三级-1',
                         component: () => import('@/views/multilevel/level-2/level-2-1.vue')
                     },
                     {
                         path: 'level_2_3_2',
                         name: 'level_2_3_2',
-                        icon: 'arrow-graph-up-right',
+                        icon: 'android-menu',
                         title: '三级-2',
                         component: () => import('@/views/multilevel/level-2/level-2-2.vue')
                     }

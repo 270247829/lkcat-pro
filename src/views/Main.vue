@@ -135,7 +135,9 @@
                 this.$store.commit('updateMenulist');
                 if (pathArr.length >= 2) {
                     this.$store.commit('addOpenSubmenu', pathArr[1].name);
+                    this.$store.commit('addOpenSubmenu', pathArr[2].name);
                 }
+                this.userName = Cookies.get('user');
             },
             toggleClick () {
                 this.shrink = !this.shrink;
@@ -176,6 +178,7 @@
                 let pathArr = util.setCurrentPath(this, to.name);
                 if (pathArr.length > 2) {
                     this.$store.commit('addOpenSubmenu', pathArr[1].name);
+                    this.$store.commit('addOpenSubmenu', pathArr[2].name);
                 }
                 localStorage.currentPageName = to.name;
             },
@@ -184,8 +187,6 @@
             }
         },
         mounted () {
-            console.log(this.$store.state.app.openedSubmenuArr);
-
             this.init();
         },
         created () {

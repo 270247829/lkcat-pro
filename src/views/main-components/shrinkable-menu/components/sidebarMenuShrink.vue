@@ -1,3 +1,8 @@
+<style scoped>
+    .lkui-dropdown {
+        display: block;
+    }
+</style>
 <template>
     <div>
         <template v-for="(item, index) in menuList">
@@ -8,7 +13,28 @@
                     </Button>
                     <DropdownMenu style="width: 200px;" slot="list">
                         <template v-for="(child, i) in item.children">
-                            <DropdownItem :name="child.name" :key="i"><Icon :type="child.icon"></Icon><span style="padding-left:10px;">{{ itemTitle(child) }}</span></DropdownItem>
+                            <template v-if="!child.children" >
+                                <DropdownItem :name="child.name" :key="i">
+                                    <Icon :type="child.icon"></Icon>
+                                    <span style="padding-left:10px;">{{ itemTitle(child) }}</span>
+                                </DropdownItem>
+                            </template>
+                            <template v-else >
+                                <Dropdown placement="right-start" transfer >
+                                    <DropdownItem  :key="i" >
+                                        <Icon :type="child.icon"></Icon>
+                                        <span style="padding-left:10px;">{{ itemTitle(child) }}</span>
+                                    </DropdownItem>
+                                    <DropdownMenu  slot="list" >
+                                        <template v-for="(subChild,index) in child.children">
+                                            <DropdownItem :name="subChild.name" :key="subChild.name + index">
+                                                <Icon :type="subChild.icon"></Icon>
+                                                <span style="padding-left:10px;">{{ itemTitle(subChild) }}</span>
+                                            </DropdownItem>
+                                        </template>
+                                    </DropdownMenu>
+                                </Dropdown>
+                            </template>
                         </template>
                     </DropdownMenu>
                 </Dropdown>

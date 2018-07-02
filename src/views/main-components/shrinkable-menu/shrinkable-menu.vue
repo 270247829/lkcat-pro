@@ -3,7 +3,7 @@
 </style>
 
 <template>
-    <div :style="{background: bgColor}" class="ivu-shrinkable-menu">
+    <div :style="{background: bgColor}" class="lkcat-pro-menu">
         <slot name="top"></slot>
         <sidebar-menu
             v-show="!shrink"

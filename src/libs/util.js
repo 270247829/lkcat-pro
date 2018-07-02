@@ -131,6 +131,17 @@ util.setCurrentPath = function (vm, name) {
                     if (childArr[i].name === name) {
                         return true;
                     }
+                    if (childArr[i].children && childArr[i].children.length != 0) {
+                        let childArr2 = childArr[i].children;
+                        let len2 = childArr2.length;
+                        let j = 0;
+                        while (j < len2) {
+                            if (childArr2[j].name === name) {
+                                return true;
+                            }
+                            j++;
+                        }
+                    }
                     i++;
                 }
                 return false;
@@ -158,26 +169,68 @@ util.setCurrentPath = function (vm, name) {
                 }
             ];
         } else {
-            let childObj = currentPathObj.children.filter((child) => {
-                return child.name === name;
-            })[0];
-            currentPathArr = [
-                {
-                    title: '首页',
-                    path: '/home',
-                    name: 'home_index'
-                },
-                {
-                    title: currentPathObj.title,
-                    path: '',
-                    name: currentPathObj.name
-                },
-                {
-                    title: childObj.title,
-                    path: currentPathObj.path + '/' + childObj.path,
-                    name: name
+            let secondObj;
+            let childObj;
+            let threeLevelFlag = false;
+            currentPathObj.children.forEach((child) => {
+                if (child.name === name) {
+                    childObj = child;
+                    return;
                 }
-            ];
+                if (child.children && child.children.length !== 0) {
+                    for (let i = 0; i < child.children.length; i++) {
+                        if (child.children[i].name === name) {
+                            childObj = child.children[i];
+                            secondObj = child;
+                            threeLevelFlag = true;
+                            return;
+                        }
+                    }
+                }
+            });
+            if (threeLevelFlag) {
+                currentPathArr = [
+                    {
+                        title: '首页',
+                        path: '/home',
+                        name: 'home_index'
+                    },
+                    {
+                        title: currentPathObj.title,
+                        path: '',
+                        name: currentPathObj.name
+                    },
+                    {
+                        title: secondObj.title,
+                        path: '',
+                        name: secondObj.name
+                    },
+                    {
+                        title: childObj.title,
+                        path: currentPathObj.path + '/' + childObj.path,
+                        name: name
+                    }
+                ];
+            } else {
+                currentPathArr = [
+                    {
+                        title: '首页',
+                        path: '/home',
+                        name: 'home_index'
+                    },
+                    {
+                        title: currentPathObj.title,
+                        path: '',
+                        name: currentPathObj.name
+                    },
+                    {
+                        title: childObj.title,
+                        path: currentPathObj.path + '/' + childObj.path,
+                        name: name
+                    }
+                ];
+            }
+
         }
     }
     vm.$store.commit('setCurrentPath', currentPathArr);

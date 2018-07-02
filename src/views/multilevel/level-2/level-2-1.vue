@@ -1,8 +1,8 @@
 <template>
-  <div>level-2-1</div>
+  <div>level-3-1</div>
 </template>
 <script>
 export default {
-  name: 'level_2_1'
+  name: 'level_3_1'
 }
 </script>

@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cc0df4a-6c6e-413c-a9e6-efb6599cdfb4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/template/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/template/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenuShrink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenuShrink.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/styles/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/g.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/g.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/r.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/r.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/y.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main-components/theme-switch/theme/y.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-1.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/three-test/three.vue" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,12 +29,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="165" column="53" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+            <state relative-caret-position="195">
+              <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -33,11 +42,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shrinkable-menu.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shrinkable-menu.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state relative-caret-position="190">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebarMenuShrink.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenuShrink.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#DropdownMenu#0;n#Dropdown#0;n#div#0;n#template#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,20 +66,11 @@
       <file leaf-file-name="Main.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="136" column="54" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="54" />
+            <state relative-caret-position="969">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding>
-                <element signature="e#3343#3426#0" expanded="true" />
+                <element signature="e#3325#3408#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/modules/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="95" column="22" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -66,8 +78,26 @@
       <file leaf-file-name="sidebarMenu.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="37" />
+            <state relative-caret-position="855">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/styles/menu.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="327" selection-start-line="327" selection-end-line="327" />
             </state>
           </provider>
         </entry>
@@ -75,7 +105,7 @@
       <file leaf-file-name="menu.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/lkcat/src/components/menu/menu.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1824">
+            <state relative-caret-position="468">
               <caret line="97" column="57" selection-start-line="97" selection-start-column="53" selection-end-line="97" selection-end-column="57" />
             </state>
           </provider>
@@ -102,7 +132,15 @@
       <find>openNames</find>
       <find>openedSubmenuArr</find>
       <find>addOpenSubmenu</find>
+      <find>arrow-graph-up-right</find>
+      <find>.lkui-menu</find>
+      <find>lkui-</find>
+      <find>lkui-shrinkable-menu</find>
+      <find>ivu-shrinkable-menu</find>
     </findStrings>
+    <replaceStrings>
+      <replace>android-menu</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,13 +152,19 @@
         <option value="$PROJECT_DIR$/src/views/main-components/side-menu/side-menu.vue" />
         <option value="$PROJECT_DIR$/src/views/main-components/side-menu/mixin.js" />
         <option value="$PROJECT_DIR$/src/views/main-components/common-icon/common-icon.vue" />
-        <option value="$PROJECT_DIR$/src/router/router.js" />
-        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue" />
-        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue" />
-        <option value="$PROJECT_DIR$/src/views/Main.vue" />
-        <option value="$PROJECT_DIR$/src/libs/util.js" />
         <option value="$PROJECT_DIR$/src/views/main-components/parent-view/parent-view.vue" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/libs/util.js" />
+        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue" />
+        <option value="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-1.vue" />
+        <option value="$PROJECT_DIR$/src/views/multilevel/level-2/level-2-2.vue" />
+        <option value="$PROJECT_DIR$/src/views/Main.vue" />
+        <option value="$PROJECT_DIR$/src/router/router.js" />
+        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenuShrink.vue" />
+        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue" />
+        <option value="$PROJECT_DIR$/src/views/main.less" />
+        <option value="$PROJECT_DIR$/src/views/main-components/shrinkable-menu/styles/menu.less" />
+        <option value="$PROJECT_DIR$/src/template/index.ejs" />
       </list>
     </option>
   </component>
@@ -154,6 +198,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,7 +215,7 @@
               <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
               <item name="lkcat-pro" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
@@ -178,16 +223,48 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lkcat-pro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="main-components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lkcat-pro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="main-components" type="462c0819:PsiDirectoryNode" />
+              <item name="shrinkable-menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lkcat-pro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="main-components" type="462c0819:PsiDirectoryNode" />
+              <item name="shrinkable-menu" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lkcat-pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lkcat-pro" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="main-components" type="462c0819:PsiDirectoryNode" />
+              <item name="shrinkable-menu" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../iview-admin-2.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bigdata_all" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="D:\Program Files\nodejs\iview\lkcat-pro\lkcat-pro\node_modules\eslint" />
@@ -195,6 +272,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Program Files\nodejs\iview\lkcat-pro\lkcat-pro\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -237,30 +315,32 @@
       <option name="presentableId" value="Default" />
       <updated>1530233834959</updated>
       <workItem from="1530233836293" duration="17058000" />
+      <workItem from="1530491970526" duration="9427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17058000" />
+    <option name="totallyTimeSpent" value="26485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24762908" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50052685" side_tool="true" weight="0.14503817" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.20501636" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50052685" side_tool="true" weight="0.14503817" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.36968374" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -269,14 +349,65 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/src/router/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-end-line="10" />
+        <state relative-caret-position="3116">
+          <caret line="165" column="53" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="136" column="54" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="54" />
+          <folding>
+            <element signature="e#3325#3408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/modules/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="95" column="22" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/lkcat/src/components/menu/menu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1843">
+          <caret line="97" column="57" selection-start-line="97" selection-start-column="53" selection-end-line="97" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1330">
+          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -287,61 +418,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/tools.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/side-menu.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="152" selection-start-line="7" selection-start-column="102" selection-end-line="7" selection-end-column="152" />
-          <folding>
-            <element signature="e#1803#1850#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/common-icon/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/icons/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/common-icon/common-icon.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/mixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/libs/tools.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/side-menu.vue" />
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/common-icon/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/icons/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/common-icon/common-icon.vue" />
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/side-menu/mixin.js" />
     <entry file="file://$PROJECT_DIR$/src/views/multilevel/level-2/level-3/level-3-1.vue">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/lkcat/src/components/menu/menu.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="97" column="57" selection-start-line="97" selection-start-column="53" selection-end-line="97" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="139" column="30" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/main-components/parent-view/parent-view.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -357,44 +442,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/modules/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="1748">
           <caret line="95" column="22" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
+    <entry file="file://$PROJECT_DIR$/src/libs/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="136" column="54" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="54" />
+        <state relative-caret-position="-311">
+          <caret line="183" column="45" selection-start-line="183" selection-start-column="40" selection-end-line="183" selection-end-column="45" />
           <folding>
-            <element signature="e#3343#3426#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/multilevel/level-2/level-2-2.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/multilevel/level-2/level-2-1.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="165" column="53" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+        <state relative-caret-position="195">
+          <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/three-test/three.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/theme-switch/theme/y.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenuShrink.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#DropdownMenu#0;n#Dropdown#0;n#div#0;n#template#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/lkcat/src/components/menu/menu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="97" column="57" selection-start-line="97" selection-start-column="53" selection-end-line="97" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/components/sidebarMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/shrinkable-menu.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        <state relative-caret-position="190">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding>
+            <element signature="e#3325#3408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="327" selection-start-line="327" selection-end-line="327" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="60" lean-forward="true" selection-start-line="9" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/template/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/main-components/shrinkable-menu/styles/menu.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
