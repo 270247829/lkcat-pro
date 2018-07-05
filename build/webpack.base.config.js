@@ -20,16 +20,26 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        css: 'vue-style-loader!css-loader',
-                        less: 'vue-style-loader!css-loader!less-loader'
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        options: {
+                            loaders: {
+                                css: 'vue-style-loader!css-loader',
+                                less: 'vue-style-loader!css-loader!less-loader'
+                            },
+                            postLoaders: {
+                                html: 'babel-loader'
+                            }
+                        }
                     },
-                    postLoaders: {
-                        html: 'babel-loader'
+                    {
+                        loader: 'lkcat-loader',
+                        options: {
+                            prefix: false
+                        }
                     }
-                }
+                ]
             },
             {
                 test: /lkcat\/.*?js$/,

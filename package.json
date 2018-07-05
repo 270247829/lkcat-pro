@@ -25,7 +25,7 @@
     "cropperjs": "^1.2.2",
     "html2canvas": "^0.5.0-beta4",
     "js-cookie": "^2.2.0",
-    "lkcat": "^0.1.9",
+    "lkcat": "^0.2.1",
     "rasterizehtml": "^1.2.4",
     "simplemde": "^1.11.2",
     "sortablejs": "^1.7.0",
@@ -83,6 +83,7 @@
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
     "webpack-merge": "^4.1.1",
-    "webpack-uglify-parallel": "^0.1.4"
+    "webpack-uglify-parallel": "^0.1.4",
+    "lkcat-loader": "^0.0.2"
   }
 }

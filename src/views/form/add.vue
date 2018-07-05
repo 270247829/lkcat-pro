@@ -62,10 +62,10 @@
                         </CheckboxGroup>
                     </FormItem>
                     <FormItem label="状态" prop="status">
-                        <i-switch size="large">
+                        <lk-switch size="large">
                             <span slot="open">正常</span>
                             <span slot="close">禁用</span>
-                        </i-switch>
+                        </lk-switch>
                     </FormItem>
                     <FormItem label="国家" prop="city">
                         <Select  >
