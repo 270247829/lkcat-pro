@@ -48,10 +48,8 @@ export const locking = {
 export const otherRouter = {
     path: '/',
     name: 'otherRouter',
-    redirect: '/home',
     component: Main,
     children: [
-        { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue') },
         { path: 'ownspace', title: '个人中心', name: 'ownspace_index', component: () => import('@/views/own-space/own-space.vue') }
     ]
 };
@@ -61,19 +59,23 @@ export const appRouter = [
     {
         path: '/home',
         icon: 'pie-graph',
-        name: 'home',
+        name: 'home_index',
         title: '首页',
-        component: Main,
-        children: [
-            { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue') },
-        ]
+        component: () => import('@/views/home/home.vue')
+    },
+    {
+        path: '/ceshi',
+        icon: 'pie-graph',
+        name: 'ceshu',
+        title: 'cesji',
+        component: () => import('@/views/form/add.vue')
     },
     {
         path: '/form',
         icon: 'compose',
         name: 'form',
         title: '表单',
-        component: Main,
+        component: parentView,
         children: [
             { path: 'add', title: '基础表单', name: 'add', icon:'edit',component: () => import('@/views/form/add.vue') },
             { path: 'workflow', title: '分步表单', name: 'workflow', icon: 'arrow-swap', component: () => import('@/views/form/work-flow/work-flow.vue') }
@@ -84,7 +86,7 @@ export const appRouter = [
         icon: 'ios-grid-view',
         name: 'tables',
         title: '表格',
-        component: Main,
+        component: parentView,
         children: [
             { path: 'list', title: '标准列表', name: 'list', icon: 'arrow-move', component: () => import('@/views/tables/list.vue') },
             { path: 'exportableTable', title: '表格导出数据', name: 'exportable-table', icon: 'code-download', component: () => import('@/views/tables/exportable-table.vue') },
@@ -96,7 +98,7 @@ export const appRouter = [
         icon: 'social-buffer',
         name: 'component',
         title: '组件',
-        component: Main,
+        component: parentView,
         children: [
             {
                 path: 'text-editor',
@@ -119,13 +121,14 @@ export const appRouter = [
         name: 'multilevel',
         icon: 'android-menu',
         title: '多级菜单',
-        component: Main,
+        component: parentView,
         children: [
             {
                 path: 'level_2_1',
                 name: 'level_2_1',
                 icon: 'android-menu',
                 title: '二级-1',
+                authority:['admin'],
                 component: () => import('@/views/multilevel/level-1.vue')
             },
             {
@@ -150,12 +153,14 @@ export const appRouter = [
                 icon: 'android-menu',
                 title: '二级-3',
                 component: parentView,
+                authority:['admin'],
                 children: [
                     {
                         path: 'level_2_3_1',
                         name: 'level_2_3_1',
                         icon: 'android-menu',
                         title: '三级-1',
+                        authority:['admin'],
                         component: () => import('@/views/multilevel/level-2/level-2-1.vue')
                     },
                     {
@@ -174,7 +179,7 @@ export const appRouter = [
         icon: 'android-sad',
         title: '异常页',
         name: 'errorpage',
-        component: Main,
+        component: parentView,
         children: [
             { path: '403', title: '403', name: '403', component: () => import('@/views/error-page/403.vue') },
             { path: '404', title: '404', name: '404', component: () => import('@/views/error-page/404.vue') },
@@ -182,13 +187,20 @@ export const appRouter = [
         ]
     }
 ];
+export const mainRouter = {
+    path: '/',
+    name: 'mainRouter',
+    component: Main,
+    redirect: '/home',
+    children: appRouter
+};
 
 // 所有上面定义的路由都要写在下面的routers里
 export const routers = [
     loginRouter,
-    otherRouter,
     locking,
-    ...appRouter,
+    mainRouter,
+    otherRouter,
     page500,
     page403,
     page404

@@ -25,13 +25,6 @@ new Vue({
         this.$store.commit('updateMenulist');
     },
     created () {
-        let tagsList = [];
-        appRouter.map((item) => {
-            if (item.children.length <= 1) {
-                tagsList.push(item.children[0]);
-            } else {
-                tagsList.push(...item.children);
-            }
-        });
+
     }
 });
