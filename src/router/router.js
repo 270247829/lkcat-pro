@@ -64,13 +64,6 @@ export const appRouter = [
         component: () => import('@/views/home/home.vue')
     },
     {
-        path: '/ceshi',
-        icon: 'pie-graph',
-        name: 'ceshu',
-        title: 'cesji',
-        component: () => import('@/views/form/add.vue')
-    },
-    {
         path: '/form',
         icon: 'compose',
         name: 'form',

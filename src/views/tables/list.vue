@@ -19,7 +19,7 @@
                         <span @click="search" style="margin: 0 10px;"><Button type="primary" icon="search">搜索</Button></span>
                     </Row>
                     <Row class="margin-top-10 ">
-                        <Table  :data="tableData1" :columns="tableColumns1" :hover-show="true" :edit-incell="true" stripe></Table>
+                        <Table @on-select="onSelect" :data="tableData1" :columns="tableColumns1" :hover-show="true" :edit-incell="true" stripe></Table>
 						<div style="margin: 10px;overflow: hidden">
 							<div style="float: right;">
 								<Page :page-size="pagination.size" :total="pagination.total" :current="pagination.current" @on-change="changePage"></Page>
@@ -65,6 +65,7 @@ export default {
         return {
             loading: true,
 			tableData1: [
+
                 {
                     id:0,
                     name:'管理员',
@@ -91,6 +92,11 @@ export default {
                 }
             ],
             tableColumns1: [
+                {
+                    type: 'selection',
+                    width: 60,
+                    align: 'center'
+                },
                 {
                     title: '姓名',
                     key: 'name'
@@ -311,6 +317,11 @@ export default {
                     this.$Message.error('请填写必填项');
                 }
             })
+        },
+        onSelect(selection,row){
+            console.log(selection);
+            console.log(row);
+
         }
     },
     watch: {
