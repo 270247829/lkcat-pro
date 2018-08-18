@@ -3,9 +3,9 @@
 </style>
 <template>
     <div class="main" :class="{'main-hide-text': shrink}">
-        <div class="main-header-con" >
+        <div class="main-header-con">
             <div slot="top" class="logo-con" :style="{width: shrink?'60px':'230px'}">
-                <span v-show="shrink" class="logo-mini"  key="max-logo"><b>LK</b>C</span>
+                <span v-show="shrink" class="logo-mini" key="max-logo"><b>LK</b>C</span>
 
                 <span v-show="!shrink" class="logo-lg" key="min-logo">
                     <img alt="logo" class="logo" :src="logoPath">
@@ -16,7 +16,8 @@
             </div>
             <div class="main-header" :style="{paddingLeft: shrink?'60px':'230px'}">
                 <div class="navicon-con">
-                    <Button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text" @click="toggleClick">
+                    <Button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text"
+                            @click="toggleClick">
                         <Icon type="navicon" size="32"></Icon>
                     </Button>
                 </div>
@@ -31,9 +32,9 @@
                     <div class="user-dropdown-menu-con">
                         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
 
-                            <Dropdown transfer  @on-click="handleClickUserDropdown" class="dropDown">
+                            <Dropdown transfer @on-click="handleClickUserDropdown" class="dropDown">
                                 <div>
-                              <Avatar :src="avatorPath" style="background: #619fe7;margin-left: 10px;"></Avatar>
+                                    <Avatar :src="avatorPath" style="background: #619fe7;margin-left: 10px;"></Avatar>
 
                                     <span class="main-user-name">{{ userName }}</span>
                                 </div>
@@ -50,12 +51,12 @@
 
         <div class="sidebar-menu-con" :style="{width: shrink?'60px':'230px', overflow: shrink ? 'visible' : 'auto'}">
             <shrinkable-menu
-                :shrink="shrink"
-                @on-change="handleSubmenuChange"
-                :theme="menuTheme"
-                :before-push="beforePush"
-                :open-names="openedSubmenuArr"
-                :menu-list="menuList">
+                    :shrink="shrink"
+                    @on-change="handleSubmenuChange"
+                    :theme="menuTheme"
+                    :before-push="beforePush"
+                    :open-names="openedSubmenuArr"
+                    :menu-list="menuList">
 
             </shrinkable-menu>
         </div>
@@ -96,7 +97,7 @@
         },
         data () {
             return {
-                logoPath : logo,
+                logoPath: logo,
                 shrink: false,
                 userName: '',
                 isFullScreen: false,
@@ -133,11 +134,16 @@
             init () {
                 let pathArr = util.setCurrentPath(this, this.$route.name);
                 this.$store.commit('updateMenulist');
-                if (pathArr.length > 2) {
-                    this.$store.commit('addOpenSubmenu', pathArr[1].name);
-                    this.$store.commit('addOpenSubmenu', pathArr[2].name);
+                for (var i = 0; i < pathArr.length; i++) {
+                    this.$store.commit('addOpenSubmenu', pathArr[i].name);
                 }
+                // if (pathArr.length > 2) {
+                //     this.$store.commit('addOpenSubmenu', pathArr[1].name);
+                //     this.$store.commit('addOpenSubmenu', pathArr[2].name);
+                // }
                 this.userName = Cookies.get('user');
+                console.log(this.$store.state.app.openedSubmenuArr);
+
             },
             toggleClick () {
                 this.shrink = !this.shrink;
@@ -176,10 +182,13 @@
             '$route' (to) {
                 this.$store.commit('setCurrentPageName', to.name);
                 let pathArr = util.setCurrentPath(this, to.name);
-                if (pathArr.length > 2) {
-                    this.$store.commit('addOpenSubmenu', pathArr[1].name);
-                    this.$store.commit('addOpenSubmenu', pathArr[2].name);
+                for (var i = 0; i < pathArr.length; i++) {
+                    this.$store.commit('addOpenSubmenu', pathArr[i].name);
                 }
+                // if (pathArr.length > 2) {
+                //     this.$store.commit('addOpenSubmenu', pathArr[1].name);
+                //     this.$store.commit('addOpenSubmenu', pathArr[2].name);
+                // }
                 localStorage.currentPageName = to.name;
             },
             lang () {

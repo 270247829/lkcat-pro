@@ -146,14 +146,14 @@ export const appRouter = [
                 icon: 'android-menu',
                 title: '二级-3',
                 component: parentView,
-                authority:['admin'],
+                // authority:['admin'],
                 children: [
                     {
                         path: 'level_2_3_1',
                         name: 'level_2_3_1',
                         icon: 'android-menu',
                         title: '三级-1',
-                        authority:['admin'],
+                        // authority:['admin'],
                         component: () => import('@/views/multilevel/level-2/level-2-1.vue')
                     },
                     {
@@ -162,6 +162,42 @@ export const appRouter = [
                         icon: 'android-menu',
                         title: '三级-2',
                         component: () => import('@/views/multilevel/level-2/level-2-2.vue')
+                    },
+                    {
+                        path: 'level_2_3_3',
+                        name: 'level_2_3_3',
+                        icon: 'android-menu',
+                        title: '三级-3',
+                        component: parentView,
+                        // authority:['admin'],
+                        children: [
+                            {
+                                path: 'level_4_1_1',
+                                name: 'level_4_1_1',
+                                icon: 'android-menu',
+                                title: '四级-1',
+                                // authority:['admin'],
+                                component: () => import('@/views/multilevel/level-2/level-4-1.vue')
+                            },
+                            {
+                                path: 'level_4_2_1',
+                                name: 'level_4_2_1',
+                                icon: 'android-menu',
+                                title: '四级-2',
+                                authority:['admin'],
+                                component: parentView,
+                                children: [
+                                    {
+                                        path: 'level_5_1_1',
+                                        name: 'level_5_1_1',
+                                        icon: 'android-menu',
+                                        title: '五级-1',
+                                        // authority:['admin'],
+                                        component: () => import('@/views/multilevel/level-2/level-5-1.vue')
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }

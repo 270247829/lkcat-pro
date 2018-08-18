@@ -38,79 +38,36 @@ const app = {
             state.tagsList.push(...list);
         },
         updateMenulist (state) {
-            let authority = parseInt(Cookies.get('authority'));
+            let authority = Cookies.get('authority');
             let menuList = [];
-            appRouter.forEach((item, index) => {
+            function checkNext (item) {
                 if (item.authority !== undefined) {
                     if (Util.showThisRoute(item.authority, authority)) {
                         if (!item.children) {
-                            menuList.push(item);
+                            return item;
                         } else {
-                            let len = menuList.push(item);
-                            let childrenArr = [];
-                            childrenArr = item.children.filter(child => {
-                                if (child.authority !== undefined) {
-                                    if (Util.showThisRoute(child.authority, authority)) {
-                                        let newChild2 = child.children.filter(child2 => {
-                                            if (child2.authority !== undefined) {
-                                                if (Util.showThisRoute(child2.authority, authority)) {
-                                                    return child2;
-                                                }
-                                            } else {
-                                                return child2;
-                                            }
-                                        });
-                                        return newChild2;
-                                    }
-                                } else {
-                                    return child;
-                                }
+                            let childrenArr = item.children.filter(child => {
+                                return checkNext(child);
                             });
-                            menuList[len - 1].children = childrenArr;
+                            item.children = childrenArr;
+                            return item;
                         }
                     }
                 } else {
                     if (!item.children) {
-                        menuList.push(item);
+                        return item;
                     } else {
-                        let len = menuList.push(item);
-                        let childrenArr = [];
-                        childrenArr = item.children.filter(child => {
-                            let newChild = null;
-                            if (child.authority !== undefined) {
-                                if (Util.showThisRoute(child.authority, authority)) {
-                                    newChild = child;
-                                }
-                            } else {
-                                newChild = child;
-                            }
-                            if (newChild === null) {
-                                return false;
-                            }
-                            if (newChild.children === undefined) {
-                                return newChild;
-                            }
-                            let newChild2 = newChild.children.filter(child2 => {
-                                if (child2.authority !== undefined) {
-                                    if (Util.showThisRoute(child2.authority, authority)) {
-                                        return child2;
-                                    }
-                                } else {
-                                    return child2;
-                                }
-                            });
-                            newChild.children = newChild2;
-                            return newChild;
+                        let childrenArr = item.children.filter(child => {
+                            return checkNext(child);
                         });
-                        if (childrenArr === undefined || childrenArr.length === 0) {
-                            menuList.splice(len - 1, 1);
-                        } else {
-                            let handledItem = JSON.parse(JSON.stringify(menuList[len - 1]));
-                            handledItem.children = childrenArr;
-                            menuList.splice(len - 1, 1, handledItem);
-                        }
+                        item.children = childrenArr;
+                        return item;
                     }
                 }
+                return null;
+            }
+            menuList = appRouter.filter((item, index) => {
+                return checkNext(item);
             });
             state.menuList = menuList;
         },

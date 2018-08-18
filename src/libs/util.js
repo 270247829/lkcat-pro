@@ -3,9 +3,7 @@ import env from '../../build/env';
 import semver from 'semver';
 import packjson from '../../package.json';
 
-let util = {
-
-};
+let util = {};
 util.title = function (title) {
     title = title || 'LKCat Pro';
     window.document.title = title;
@@ -120,32 +118,33 @@ util.setCurrentPath = function (vm, name) {
             }
         ];
     } else {
-        let currentPathObj = vm.$store.state.app.routers.filter(item => {
-            if (!item.children) {
-                return item.name === name;
-            } else {
-                let i = 0;
-                let childArr = item.children;
-                let len = childArr.length;
-                while (i < len) {
-                    if (childArr[i].name === name) {
-                        return true;
-                    }
-                    if (childArr[i].children && childArr[i].children.length != 0) {
-                        let childArr2 = childArr[i].children;
-                        let len2 = childArr2.length;
-                        let j = 0;
-                        while (j < len2) {
-                            if (childArr2[j].name === name) {
-                                return true;
-                            }
-                            j++;
+        function getNext (item) {
+            if (item.name === name) {
+                return item;
+            }
+            if (item.children) {
+                let result = null;
+                for (var i = 0; i < item.children.length; i++) {
+                    var child = item.children[i];
+                    if (child.name === name) {
+                        result = child;
+                        break;
+                    } else {
+                        var tem = getNext(child);
+                        if (tem != null) {
+                            result = tem;
+                            break;
                         }
                     }
-                    i++;
                 }
-                return false;
+                return result;
+            } else {
+                return null;
             }
+        }
+
+        let currentPathObj = vm.$store.state.app.routers.filter(item => {
+            return getNext(item);
         })[0];
         if (currentPathObj.name === 'home') {
             currentPathArr = [
@@ -169,68 +168,35 @@ util.setCurrentPath = function (vm, name) {
                 }
             ];
         } else {
-            let secondObj;
-            let childObj;
-            let threeLevelFlag = false;
-            currentPathObj.children.forEach((child) => {
-                if (child.name === name) {
-                    childObj = child;
-                    return;
+            let currentRoutePath = [];
+            function getNextPath (item) {
+                if (item.name === name) {
+                    currentRoutePath.push(item);
+                    return true;
                 }
-                if (child.children && child.children.length !== 0) {
-                    for (let i = 0; i < child.children.length; i++) {
-                        if (child.children[i].name === name) {
-                            childObj = child.children[i];
-                            secondObj = child;
-                            threeLevelFlag = true;
-                            return;
+                if (item.children) {
+                    for (var i = 0; i < item.children.length; i++) {
+                        var child = item.children[i];
+                        var f = getNextPath(child);
+                        if (f) {
+                            currentRoutePath.push(item);
+                            return true;
                         }
                     }
                 }
-            });
-            if (threeLevelFlag) {
-                currentPathArr = [
-                    {
-                        title: '首页',
-                        path: '/home',
-                        name: 'home_index'
-                    },
-                    {
-                        title: currentPathObj.title,
-                        path: '',
-                        name: currentPathObj.name
-                    },
-                    {
-                        title: secondObj.title,
-                        path: '',
-                        name: secondObj.name
-                    },
-                    {
-                        title: childObj.title,
-                        path: currentPathObj.path + '/' + childObj.path,
-                        name: name
-                    }
-                ];
-            } else {
-                currentPathArr = [
-                    {
-                        title: '首页',
-                        path: '/home',
-                        name: 'home_index'
-                    },
-                    {
-                        title: currentPathObj.title,
-                        path: '',
-                        name: currentPathObj.name
-                    },
-                    {
-                        title: childObj.title,
-                        path: currentPathObj.path + '/' + childObj.path,
-                        name: name
-                    }
-                ];
+                return false;
             }
 
+            getNextPath(currentPathObj);
+
+            currentRoutePath.forEach(function (value, index, array) {
+                var object = {
+                    title: value.title,
+                    path: '',
+                    name: value.name
+                };
+                currentPathArr.unshift(object);
+            });
         }
     }
     vm.$store.commit('setCurrentPath', currentPathArr);
@@ -304,6 +270,5 @@ util.fullscreenEvent = function (vm) {
     vm.$store.commit('updateMenulist');
     // 全屏相关
 };
-
 
 export default util;
