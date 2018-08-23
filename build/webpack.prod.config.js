@@ -18,7 +18,7 @@ fs.open('./build/env.js', 'w', function(err, fd) {
 
 module.exports = merge(webpackBaseConfig, {
     output: {
-        publicPath: '/lkcat-pro/dist/', 
+        publicPath: '/lkcat-pro/dist/',
         filename: '[name].[hash].js',
         chunkFilename: '[name].[hash].chunk.js'
     },
@@ -68,6 +68,10 @@ module.exports = merge(webpackBaseConfig, {
             },
             {
                 from: 'src/views/my-components/text-editor/tinymce'
+            },
+            {
+                from: './config.js',
+                to: 'config.js'
             }
         ], {
             ignore: [

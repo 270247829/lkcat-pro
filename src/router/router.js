@@ -184,7 +184,7 @@ export const appRouter = [
                                 name: 'level_4_2_1',
                                 icon: 'android-menu',
                                 title: '四级-2',
-                                authority:['admin'],
+                                authority:['admin','aaa'],
                                 component: parentView,
                                 children: [
                                     {
